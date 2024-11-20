@@ -4,18 +4,19 @@ import numpy as np
 from utils import plot_learning_curve
 
 if __name__ == '__main__':
-    env = gym.make('LunarLanderContinuous-v2')
+    env = gym.make("LunarLander-v3", continuous=True, gravity=-10.0, enable_wind=False, wind_power=15.0, turbulence_power=1.5)
     agent = Agent(alpha=0.000025, beta=0.00025, input_dims=env.observation_space.shape, tau=0.001, env = env, batch_size=64, layer1_size=400, layer2_size=300, n_actions=env.action_space.shape[0])
     np.random.seed(0)
 
     score_history = []
     for i in range(1000):
-        obs = env.reset()
+        obs, info = env.reset()
         done = False
         score = 0
         while not done:
             act = agent.choose_action(obs)
-            new_state, reward, done, info = env.step(act)
+            new_state, reward, terminated, truncated, info = env.step(act)
+            done = terminated or truncated
             agent.remember(obs, act, reward, new_state, int(done))
             agent.learn()
             score += reward
