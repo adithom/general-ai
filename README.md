@@ -1,6 +1,6 @@
-# General AI
+# Reinforcement Learning Algorithms
 
-Collection of general ML algorithms as a training exercise. Work in progress.
+Collection of general RL algorithms as a training exercise. Work in progress.
 
 ###  Deep Deterministic Policy Gradient (DDPG)
 https://arxiv.org/abs/1509.02971
@@ -15,3 +15,16 @@ Requires Python3, PyTorch, NumPy, Matplotlib and Gymnasium
 
 ### Soft Actor-Critic (SAC)
 https://arxiv.org/abs/1801.01290
+>TODO
+
+### Proximal Policy Optimization (PPO)
+https://arxiv.org/abs/1707.06347
+>TODO
+
+### Multi-Agent Deep Deterministic Policy Gradient (MADDPG)
+https://arxiv.org/abs/1706.02275
+>TODO
+
+### QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning
+https://arxiv.org/abs/1803.11485
+>TODO
