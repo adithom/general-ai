@@ -1,0 +1,12 @@
+Notes From Continuous control with deep reinforcement learning (https://arxiv.org/abs/1509.02971)
+
+actor-critic, model-free algorithm
+DQN only works for discrete action spaces
+paper assumes environment is fully observed so s_t = x_t
+uses replay buffer to store tuple (s_t, a_t, r_t, s_t+1)
+deterministic policy does not output probabilities
+uses batch normalization
+soft updates
+four networks in total: two actors and two critics
+one online and one target for each
+explore exploit dilemma handled by noise (Ornstein Uhlenbeck in the paper)
